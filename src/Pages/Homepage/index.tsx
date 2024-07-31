@@ -1,11 +1,19 @@
-import { Flex, Heading, Input, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Text,
+} from "@chakra-ui/react";
+import { MapPin } from "@phosphor-icons/react";
 import React from "react";
 
 const Homepage = () => {
   return (
     <Flex width={"100%"} height={"100%"}>
       <Flex p={8} width={"100%"} height={"100%"} direction={"column"}>
-        <Heading width={"700px"} fontSize={"xxx-large"} color={"whitesmoke"}>
+        <Heading width={["100%","100%","400px","700px"]} fontSize={"xxx-large"} color={"whitesmoke"}>
           Super fast connectivity made simple.
         </Heading>
 
@@ -13,7 +21,12 @@ const Homepage = () => {
           Check for internet coverage in your area.
         </Text>
         <Flex my={3}>
-          <Input width={'700px'} placeholder="Basic usage" />
+          <InputGroup width={"600px"}>
+            <Input background={'whitesmoke'} borderRadius={"20px"} placeholder="Check coverage" />
+            <InputRightElement mr={2}>
+              <MapPin size={24} />
+            </InputRightElement>
+          </InputGroup>
         </Flex>
       </Flex>
     </Flex>

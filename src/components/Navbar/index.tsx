@@ -9,9 +9,8 @@ import {
   MenuButton,
   MenuList,
 } from "@chakra-ui/react";
-import { theme } from "../../theme";
 import vdtlogo from "../../tools/vdtlogo3.png";
-import { User } from "@phosphor-icons/react";
+import { CaretDown, User } from "@phosphor-icons/react";
 
 const MenuItem = (props: any) => {
   const { children, isLast, ...rest } = props;
@@ -40,6 +39,8 @@ const Navbar = (props: any) => {
       bg={"#030B1C"}
       {...props}
       height={"150px"}
+      overflowY={'hidden'}
+      top={0}
     >
       <Flex align="center">
         <Image borderRadius={"50px"} src={vdtlogo} />
@@ -64,7 +65,7 @@ const Navbar = (props: any) => {
             <Menu>
               <MenuButton pr={10}>
                 <Text fontWeight="bold" display="block" color={"white"}>
-                  Products
+                 <Flex direction={'row'}>Products <CaretDown size={20} /></Flex>
                 </Text>
               </MenuButton>
 
@@ -132,7 +133,7 @@ const Navbar = (props: any) => {
               Get Help
             </MenuItem>
 
-            <Flex gap={3} direction={"row"}>
+            <Flex gap={4} direction={"row"}>
               <Button background={'yellow'} borderRadius={"20px"}>
                 <Text fontSize={"small"}>CHECK COVERAGE</Text>
               </Button>
