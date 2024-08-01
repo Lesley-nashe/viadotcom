@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import vdtlogo from "../../tools/vdtlogo3.png";
 import { CaretDown, User } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 const MenuItem = (props: any) => {
   const { children, isLast, ...rest } = props;
@@ -20,13 +21,15 @@ const MenuItem = (props: any) => {
       mr={{ base: 0, sm: isLast ? 0 : 8 }}
       display="block"
       {...rest}
+      color={"white"}
     >
-      <Link color={"white"}>{children}</Link>
+      <Link >{children}</Link>
     </Text>
   );
 };
 
 const Navbar = (props: any) => {
+  const navigate = useNavigate();
   return (
     <Flex
       as="nav"
@@ -39,8 +42,8 @@ const Navbar = (props: any) => {
       bg={"#030B1C"}
       {...props}
       height={"150px"}
-      overflowY={'hidden'}
       top={0}
+      position="sticky"
     >
       <Flex align="center">
         <Image borderRadius={"50px"} src={vdtlogo} />
@@ -55,7 +58,7 @@ const Navbar = (props: any) => {
         >
           <>
             <MenuItem
-              // onClick={() => navigate("/")}
+              onClick={() => navigate("/")}
               fontSize="16px"
               fontWeight="bold"
             >
@@ -138,7 +141,7 @@ const Navbar = (props: any) => {
                 <Text fontSize={"small"}>CHECK COVERAGE</Text>
               </Button>
 
-              <Button borderRadius={"20px"}>
+              <Button onClick={() => navigate("/login")} borderRadius={"20px"}>
                 <User size={12} /> <Text mx={2}>Login</Text> 
               </Button>
             </Flex>

@@ -1,31 +1,17 @@
 import { Flex, FormLabel, Input, Text } from "@chakra-ui/react";
 import { ErrorMessage, Field } from "formik";
-import { FC } from "react";
 
-interface formFields {
-  title?: string;
-  name: string;
-  id?: string;
-  type: string;
-}
-
-const FormInput: FC<formFields> = ({
-  title,
-  name,
-  id,
-  type,
-  ...Children
-}) => {
+const FormInput = (props: any) => {
+  const { children, labelColor, title, id, name, type, ...rest } = props;
   return (
-    <Flex direction={'column'} {...Children}>
-      <FormLabel htmlFor="email">{title}</FormLabel>
+    <Flex {...rest} direction={'column'}>
+      <FormLabel color={labelColor} htmlFor={name}>{title}</FormLabel>
       <Field
         as={Input}
         id={id}
         name={name}
         type={type}
-        variant="filled"
-        width={"300px"}
+        variant='white'
       />
       <ErrorMessage name={name}>
         {(errorMessage) => <Text>{errorMessage}</Text>}

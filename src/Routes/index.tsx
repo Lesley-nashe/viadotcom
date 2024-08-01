@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "../Pages/Homepage";
 import Footer from "../components/Footer";
+import Loginpage from "../Pages/Login";
+import SignupPage from "../Pages/Signup";
 
 const AppRoutes = () => {
   return (
@@ -12,6 +14,8 @@ const AppRoutes = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Loginpage />} />
+          <Route path="/signup" element={<SignupPage />} />
         </Routes>
         <Footer />
       </Flex>
