@@ -1,30 +1,19 @@
 import {
   Button,
   Checkbox,
-  Divider,
   Flex,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import React from "react";
-import FormInput from "../../components/FormComponents/FormInput";
-import FormSelect from "../../components/FormComponents/FormSelect";
+import FormInput from "../../../components/FormComponents/FormInput";
+import FormSelect from "../../../components/FormComponents/FormSelect";
 
 const SignupPage = () => {
   return (
-    <Flex width={"100%"} p={8}>
+    <Flex width={"100%"}>
       <Flex direction={"column"} width={"100%"} height={"100%"}>
-        <Flex gap={3} direction={"column"}>
-          <Text color={"White"} fontSize="40px">
-            Please Enter Your Details
-          </Text>
-          <Text color={"White"} fontSize="14px">
-            Welcome, if you joined Supersonic before 1 August 2021, please use
-            this login here
-          </Text>
-          <Divider width={"42%"} color={"White"} />
-        </Flex>
         <Formik
           initialValues={{
             email: "",

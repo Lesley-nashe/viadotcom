@@ -1,4 +1,4 @@
-import { Flex, FormLabel, Select } from "@chakra-ui/react";
+import { Flex, FormLabel } from "@chakra-ui/react";
 import { Field } from "formik";
 
 const FormSelect = (props: any) => {

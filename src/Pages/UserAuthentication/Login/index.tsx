@@ -1,21 +1,12 @@
-import { Button, Flex, Text, Divider } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import React from "react";
-import FormInput from "../../components/FormComponents/FormInput";
+import FormInput from "../../../components/FormComponents/FormInput";
 
 const Loginpage = () => {
   return (
-    <Flex width={"100%"}  p={8}>
+    <Flex width={"100%"}>
       <Flex direction={'column'} width={"100%"} height={"100%"}>
-        <Flex gap={3} direction={'column'}>
-          <Text color={'White'} fontSize="40px">
-          Please Enter Your Details
-          </Text>
-          <Text color={'White'} fontSize="14px">
-          Log in or create an account below.
-          </Text>
-          <Divider width={"42%"} color={'White'} />
-        </Flex>
         <Formik
           initialValues={{
             email: "",

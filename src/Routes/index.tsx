@@ -4,8 +4,7 @@ import Navbar from "../components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "../Pages/Homepage";
 import Footer from "../components/Footer";
-import Loginpage from "../Pages/Login";
-import SignupPage from "../Pages/Signup";
+import UserAuthentication from "../Pages/UserAuthentication";
 
 const AppRoutes = () => {
   return (
@@ -14,8 +13,7 @@ const AppRoutes = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/login" element={<Loginpage />} />
-          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/authenticate" element={<UserAuthentication />} />
         </Routes>
         <Footer />
       </Flex>
