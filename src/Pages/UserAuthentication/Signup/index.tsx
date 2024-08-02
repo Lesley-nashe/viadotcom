@@ -9,6 +9,7 @@ import { Form, Formik } from "formik";
 import React from "react";
 import FormInput from "../../../components/FormComponents/FormInput";
 import FormSelect from "../../../components/FormComponents/FormSelect";
+import { SignupSchema } from "../../../Helpers";
 
 const SignupPage = () => {
   return (
@@ -16,11 +17,19 @@ const SignupPage = () => {
       <Flex direction={"column"} width={"100%"} height={"100%"}>
         <Formik
           initialValues={{
+            customerType: "",
+            citizenship: "",
+            fname: "",
+            surname: "",
+            mobileNumber: "",
+            Idnumber: "",
             email: "",
-            password: "",
+            confirmEmail: "",
+            password: ""
           }}
+          validationSchema={SignupSchema}
           onSubmit={(values) => {
-            console.log(values.email, values.password);
+            console.log(values);
           }}
         >
           <Form>
@@ -36,8 +45,8 @@ const SignupPage = () => {
               <FormSelect
                 labelColor={"white"}
                 width={"500px"}
-                name="customerType"
-                title="Customer Type :"
+                name="citizenship"
+                title="Are you an SA Citizen/Resident? :"
                 my={3}
                 options={["Yes, I am a SA Citizen/Resident", "Non SA Resident"]}
               />
@@ -60,14 +69,14 @@ const SignupPage = () => {
               <FormInput
                 labelColor={"white"}
                 width={"230px"}
-                name="mobilenumber"
+                name="mobileNumber"
                 title="Mobile Number :"
                 my={3}
               />
               <FormInput
                 labelColor={"white"}
                 width={"230px"}
-                name="Id"
+                name="Idnumber"
                 title="ID Number :"
                 my={3}
               />
@@ -83,7 +92,7 @@ const SignupPage = () => {
               <FormInput
                 labelColor={"white"}
                 width={"500px"}
-                name="email"
+                name="confirmEmail"
                 title="Confirm Email :"
                 my={3}
               />

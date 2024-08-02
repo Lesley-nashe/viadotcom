@@ -44,8 +44,7 @@ const UserAuthentication = () => {
               Please Enter Your Details
             </Text>
             <Text color={"White"} fontSize="14px">
-              Welcome, if you joined Viadotcom before 1 August 2021, please use
-              this login here
+              Welcome, please fill the form below to register an account!
             </Text>
           </Flex>
         )}

@@ -2,6 +2,9 @@ import { Button, Flex } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import React from "react";
 import FormInput from "../../../components/FormComponents/FormInput";
+import { loginSchema } from "../../../Helpers";
+
+
 
 const Loginpage = () => {
   return (
@@ -12,8 +15,9 @@ const Loginpage = () => {
             email: "",
             password: "",
           }}
+          validationSchema={loginSchema}
           onSubmit={(values) => {
-            console.log(values.email, values.password);
+            console.log(values);
           }}
         >
           <Form>

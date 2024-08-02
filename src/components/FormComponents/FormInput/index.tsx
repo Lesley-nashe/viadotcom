@@ -14,7 +14,7 @@ const FormInput = (props: any) => {
         variant='white'
       />
       <ErrorMessage name={name}>
-        {(errorMessage) => <Text>{errorMessage}</Text>}
+        {(errorMessage) => <Text color='red'>{errorMessage}</Text>}
       </ErrorMessage>
     </Flex>
   );

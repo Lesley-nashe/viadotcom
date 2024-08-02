@@ -44,6 +44,7 @@ const Navbar = (props: any) => {
       height={"150px"}
       top={0}
       position="sticky"
+      zIndex={1000} // Adjust this value if needed
     >
       <Flex align="center">
         <Image borderRadius={"50px"} src={vdtlogo} />
@@ -141,7 +142,7 @@ const Navbar = (props: any) => {
                 <Text fontSize={"small"}>CHECK COVERAGE</Text>
               </Button>
 
-              <Button onClick={() => navigate("/login")} borderRadius={"20px"}>
+              <Button onClick={() => navigate("/authenticate")} borderRadius={"20px"}>
                 <User size={12} /> <Text mx={2}>Login</Text> 
               </Button>
             </Flex>
