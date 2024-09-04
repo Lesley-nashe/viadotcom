@@ -7,9 +7,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { MapPin } from "@phosphor-icons/react";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../auth/authWrapper";
+import { useAuthContext } from "../../hooks/useContext";
 
 const Homepage = () => {
+  const {currentUser} = useAuthContext()
+  console.log(currentUser);
   return (
     <Flex width={"100%"} height={"100%"}>
       <Flex p={8} width={"100%"} height={"100%"} direction={"column"}>

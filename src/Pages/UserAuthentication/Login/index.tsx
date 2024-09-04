@@ -3,13 +3,23 @@ import { Form, Formik } from "formik";
 import React from "react";
 import FormInput from "../../../components/FormComponents/FormInput";
 import { loginSchema } from "../../../Helpers";
-
-
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../../hooks/useContext";
 
 const Loginpage = () => {
+  const navigate = useNavigate();
+  const {login} = useAuthContext()
+  const doLogin = async (userName: string, password: string) => {
+    try {
+      login(userName, password)
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Flex width={"100%"}>
-      <Flex direction={'column'} width={"100%"} height={"100%"}>
+      <Flex direction={"column"} width={"100%"} height={"100%"}>
         <Formik
           initialValues={{
             email: "",
@@ -17,7 +27,7 @@ const Loginpage = () => {
           }}
           validationSchema={loginSchema}
           onSubmit={(values) => {
-            console.log(values);
+            doLogin(values.email, values.password);
           }}
         >
           <Form>

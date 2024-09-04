@@ -32,4 +32,9 @@ export const SignupSchema = Yup.object().shape({
       .max(50, "Passowrd is too Long!")
       .required("Password is Required"),
   });
+
+  export type User = {
+    email: String, 
+    username: String,
+}
   

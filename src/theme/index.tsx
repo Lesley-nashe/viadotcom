@@ -20,8 +20,8 @@ export const theme = extendTheme({
     },
         // 
   fonts: {
-    body: "system-ui, sans-serif",
-    heading: "Georgia, serif",
+    heading: '"Droid Serif", sans-serif',
+    body: '"Open Sans", sans-serif',
     mono: "Menlo, monospace",
   },
   fontSizes: {
